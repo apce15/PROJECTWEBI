@@ -1,7 +1,7 @@
-﻿using System;
+﻿using BAYILERSATISPROJESI.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BAYILERSATISPROJESI.Controllers
@@ -13,7 +13,43 @@ namespace BAYILERSATISPROJESI.Controllers
         {
             return View();
         }
+        public ActionResult Anasayfa()
+        {
+            return View();
+        }
         public ActionResult Urunler()
+        {
+
+
+
+
+            UrunKategoriModel model = new UrunKategoriModel();
+
+
+            model.UrunSayisi = Veritabani.Liste.Where(i => i.Satistami == true).Count();
+            model.Urunler = Veritabani.Liste.Where(i => i.Satistami == true).ToList();
+
+
+
+            return View(model);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var urun = Veritabani.Liste.Where(i => i.UrunId == id).FirstOrDefault();
+
+
+
+            return View(urun);
+        }
+
+        private object Where(Func<object, bool>
+    p)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ActionResult BayiGirisi()
         {
             return View();
         }
@@ -21,13 +57,10 @@ namespace BAYILERSATISPROJESI.Controllers
         {
             return View();
         }
-        public ActionResult BayiGirisi()
+        public ActionResult YoneticiSinirlar()
         {
             return View();
         }
-        public ActionResult YOneticiSinirlar()
-        {
-            return View();
-        }
+
     }
 }

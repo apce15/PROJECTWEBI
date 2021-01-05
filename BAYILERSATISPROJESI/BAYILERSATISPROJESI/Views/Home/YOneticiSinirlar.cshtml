@@ -1,66 +1,21 @@
-﻿using BAYILERSATISPROJESI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Mvc;
+﻿
 
-namespace BAYISATISPROJE.Controllers
-{
-    public class HomeController : Controller
-    {
-        // GET: Home
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult Anasayfa()
-        {
-            return View();
-        }
-        public ActionResult Urunler()
-        {
+<div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url('/banzhow/img/arkaplan.jpeg');"></div>
+            <div class="carousel-caption">
 
+                <a href="#" class="button">ALINAN SİPARİŞLER</a>
+                <a href="#" class="button">ÜRÜN EKLEME</a>
+                <a href="#" class="button">ÜRÜN STOK/HAMMADDE</a>
+            </div>
+        </div>
 
+    </div>
 
+    <!-- Controls -->
 
-            UrunKategoriModel model = new UrunKategoriModel();
-
-
-            model.UrunSayisi = Veritabani.Liste.Where(i => i.Satistami == true).Count();
-            model.Urunler = Veritabani.Liste.Where(i => i.Satistami == true).ToList();
-
-
-
-            return View(model);
-        }
-
-        public ActionResult Details(int id)
-        {
-            var urun = Veritabani.Liste.Where(i => i.UrunId == id).FirstOrDefault();
-
-
-
-            return View(urun);
-        }
-
-        private object Where(Func<object, bool>
-    p)
-    {
-    throw new NotImplementedException();
-    }
-
-    public ActionResult BayiGirisi()
-    {
-    return View();
-    }
-    public ActionResult YoneticiGirisi()
-    {
-    return View();
-    }
-    public ActionResult YoneticiSinirlar()
-    {
-    return View();
-    }
-
-    }
-    }
+</div>

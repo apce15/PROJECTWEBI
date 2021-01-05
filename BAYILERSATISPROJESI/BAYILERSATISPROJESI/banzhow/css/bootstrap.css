@@ -71,7 +71,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold;
+  font-weigBOTTONht: bold;
 }
 
 dfn {
@@ -153,6 +153,8 @@ input,
 select,
 textarea {
   margin: 0;
+  background-color: aqua;
+  padding: 0.5cm;
   font-family: inherit;
   font-size: 100%;
 }

@@ -207,8 +207,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\YoneticiGirisi.cshtml" />
-    <Content Include="Views\Home\YOneticiSinirlar.cshtml" />
+    <Content Include="Views\Home\YoneticiSinirlar.cshtml" />
     <Content Include="Views\Home\Urunler.cshtml" />
+    <Content Include="Views\Kategori\KategoriMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -218,7 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Kategori\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
