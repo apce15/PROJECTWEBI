@@ -1,0 +1,136 @@
+﻿
+@using BAYISATISPROJE.Models;
+
+@model UrunKategoriModel
+@{
+
+    ViewBag.Title = "Urunler";
+}
+
+
+
+
+<body>
+
+
+
+    <div class="container container-int">
+
+
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <hr />
+                <div class="col-md-12">
+                    <div class="alert alert-primary" role="alert">
+                        <strong>@Model.UrunSayisi</strong> adet ürün listelendi.
+                    </div>
+
+                </div>
+
+                <hr />
+
+
+
+            </div>
+
+            <div class="col-md-8 col-sm-8">
+                <div class="col-md-9">
+
+                    @foreach (var urun in Model.Urunler)
+                    {
+
+                        <div class="col-sm-6 col-md-4">
+                            <div class="thumbnail">
+                                <img src="http://via.placeholder.com/350x150" alt="..." />
+                                <div class="caption">
+                                    <h3>@urun.UrunAdi</h3>
+                                    <p>
+
+                                        @if (urun.Aciklama.Length > 50)
+                                        {
+                                            @(urun.Aciklama.Substring(0, 47)+"...")
+                                        }
+                                        else
+                                        {
+                                            @urun.Aciklama
+                                        }
+
+                                    </p>
+                                    <p>
+                                        @*<a href="/Home/Details/?id=@urun.UrunId" class="btn btn-primary" role="button">Button</a>*@
+                                        @Html.ActionLink("Ürünü incele", "Details", new { id = urun.UrunId }, new { @class = "btn btn-primary" })
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+
+
+                <div class="text-center">
+                    <ul class="pagination">
+                        <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                        <li class="active"><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+                    </ul>
+                </div><!-- /.text-center -->
+
+
+
+            </div>
+
+            <div class="col-md-4 col-sm-4 sidebar">
+                <div class="well">
+                    <h4>Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.well -->
+
+
+                <div class="well">
+                    <h4>Kategoriler</h4>
+                    <ul class="nav nav-stacked nav-pills">
+                        <ul class="nav nav-stacked nav-pills">
+                            @Html.Action("KategoriMenu", "Kategori")
+
+                        </ul>
+                    </ul>
+                </div><!-- /.well -->
+
+
+
+
+
+
+
+
+
+
+
+            </div><!-- /.sidebar -->
+
+        </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+
+
+
+
+
+
+
+</body>
