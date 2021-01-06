@@ -209,6 +209,7 @@
     <Content Include="Views\Home\YoneticiGirisi.cshtml" />
     <Content Include="Views\Home\YOneticiSinirlar.cshtml" />
     <Content Include="Views\Home\Urunler.cshtml" />
+    <Content Include="Views\Home\BayiSinirlar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

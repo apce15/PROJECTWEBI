@@ -56,7 +56,10 @@ namespace BayiSatisProjesi.Controllers
         {
             return View();
         }
-        
 
-}
+        public ActionResult BayiSinirlar()
+        {
+            return View();
+        }
+    }
 }
