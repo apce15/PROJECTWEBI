@@ -692,7 +692,7 @@ div.list-posts ul li a:hover{
   border-radius: 2px;
   color: white;
   font-family: 'open_sansbold';
-  margin: 30px 0 0 0;
+  margin: 30px 30px 30px 30px;
   display: inline-block;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
