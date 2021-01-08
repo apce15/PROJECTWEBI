@@ -1,4 +1,12 @@
-﻿
+﻿@model BAYILERSATISPROJESI.Models.User
+
+@{
+
+    if (Session["UserID"] == null)
+    {
+        Response.Redirect("/Home/YoneticiGirisi");
+    }
+}
 
 <div id="myCarousel" class="carousel slide">
     <!-- Indicators -->
