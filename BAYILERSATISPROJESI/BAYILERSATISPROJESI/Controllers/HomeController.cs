@@ -57,9 +57,25 @@ namespace BAYILERSATISPROJESI.Controllers
         {
             return View();
         }
-        public ActionResult YoneticiSinirlar()
+        [HttpPost]
+        public ActionResult YoneticiSinirlar(BAYILERSATISPROJESI.Models.User user)
         {
-            return View();
+            using (DBModels db = new DBModels())
+            {
+                var userDetail = db.Users.Where(x => x.KullaniciAdi == user.KullaniciAdi && x.Sifre == user.Sifre).FirstOrDefault();
+                if (userDetail == null)
+                {
+                    user.GirişHataMesajı = "Kullanıcı adı veya şifre yanlış";
+                    return View("YoneticiGirisi", user);
+                }
+                else
+                {
+                    Session["userID"] = user.UserID;
+                    Session["kullanıcıadı"] = user.KullaniciAdi;
+                    return View("YoneticiSinirlar", user);
+                }
+            }
+
         }
 
     }

@@ -1,17 +1,68 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@model BAYILERSATISPROJESI.Models.User
 
-<!DOCTYPE html>
-
-<html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>YoneticiGirisi</title>
+    <title>Giriş</title>
+    <style>
+
+
+        .field-validation-eror {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <div> 
+    <div id="login-div">
+        @using (Html.BeginForm("YoneticiSinirlar", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td style="text-decoration:underline">YÖNETİCİ GİRİŞ</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(model => model.KullaniciAdi)</td>
+                    <td>@Html.EditorFor(model => model.KullaniciAdi)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.KullaniciAdi)</td>
+                </tr>
+
+                <tr>
+                    <td>@Html.LabelFor(model => model.Sifre)</td>
+                    <td>@Html.EditorFor(model => model.Sifre)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-eror">@Html.DisplayFor(model => model.GirişHataMesajı)</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="GİRİŞ" />
+
+                    </td>
+                </tr>
+
+            </table>
+        }
+
+        <script src="~/Scripts/jquery-1.8.0.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     </div>
+
+
+
+    <!-- Switcher -->
+    <script type="text/javascript" src="js/switcher/switcher.js"></script>
+    <link href="js/switcher/switcher.css" rel="stylesheet">
+
+
+
 </body>
-</html>
