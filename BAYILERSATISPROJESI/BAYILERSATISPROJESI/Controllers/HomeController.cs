@@ -49,10 +49,7 @@ namespace BAYILERSATISPROJESI.Controllers
             throw new NotImplementedException();
         }
 
-        public ActionResult BayiGirisi()
-        {
-            return View();
-        }
+       
         public ActionResult YoneticiGirisi()
         {
             return View();
@@ -62,17 +59,54 @@ namespace BAYILERSATISPROJESI.Controllers
         {
             using (DBModels db = new DBModels())
             {
-                var userDetail = db.Users.Where(x => x.KullaniciAdi == user.KullaniciAdi && x.Sifre == user.Sifre).FirstOrDefault();
-                if (userDetail == null)
+                try
                 {
-                    user.GirişHataMesajı = "Kullanıcı adı veya şifre yanlış";
-                    return View("YoneticiGirisi", user);
+                    var userDetail = db.Users.Where(x => x.KullaniciAdi == user.KullaniciAdi && x.Sifre == user.Sifre).FirstOrDefault();
+                    if (userDetail == null)
+                    {
+                        Console.WriteLine("First");
+                        user.entryErrorMessage = "Kullanıcı adı veya şifre yanlış";
+                        return View("YoneticiGirisi", user);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Second");
+                        Session["userID"] = user.UserID;
+                        Session["kullanıcıadı"] = user.KullaniciAdi;
+                        return View("YoneticiSinirlar", user);
+                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return null;
+                }
+            }
+
+        }
+        public ActionResult BayiGirisi()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult BayiSinirlar(BAYILERSATISPROJESI.Models.Table table)
+        {
+            using (BayiDataBaseEntities db = new BayiDataBaseEntities())
+            {
+                var tableDetail = db.Tables.Where(x => x.ulke == table.ulke && x.sehir == table.sehir && x.bayiid == table.bayiid && x.sifre == table.sifre).FirstOrDefault();
+                if (tableDetail == null)
+                {
+                    table.entryErrorMessage = " Yanlış Bilgileri Girdiniz.Tekrar Deneyin";
+                    return View("BayiGirisi", table);
                 }
                 else
                 {
-                    Session["userID"] = user.UserID;
-                    Session["kullanıcıadı"] = user.KullaniciAdi;
-                    return View("YoneticiSinirlar", user);
+                    Session["ulke"] = table.ulke;
+                    Session["sehir"] = table.sehir;
+                    Session["bayiid"] = table.bayiid;
+                    Session["sifre"] = table.sifre;
+
+                    return View("BayiSinirlar", table);
                 }
             }
 
