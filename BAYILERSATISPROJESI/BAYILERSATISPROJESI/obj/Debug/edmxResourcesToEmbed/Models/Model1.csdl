@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BayiDataBaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="ulke" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="sehir" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="bayiid" Type="Decimal" Precision="20" Scale="0" />
+    <Property Name="sifre" Type="Decimal" Precision="20" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="BayiDataBaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tables" EntityType="Self.Table" />
+  </EntityContainer>
+</Schema>

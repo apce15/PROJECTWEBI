@@ -14,16 +14,25 @@ namespace BAYILERSATISPROJESI.Models
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class User
+    public partial class Table
     {
-        public int UserID { get; set; }
-        [DisplayName("Kullanýcý Adý")]
+        public int Id { get; set; }
+
+        [DisplayName("ulke")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
-        public string KullaniciAdi { get; set; }
+        public string ulke { get; set; }
+
+        [DisplayName("sehir")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
+        public string sehir { get; set; }
+
+        [DisplayName("bayi-id")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
+        public Nullable<decimal> bayiid { get; set; }
         [DataType(DataType.Password)]
-        [DisplayName("Þifre")]
+        [DisplayName("þifre")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
-        public string Sifre { get; set; }
+        public Nullable<decimal> sifre { get; set; }
         public string entryErrorMessage { get; set; }
     }
 }
