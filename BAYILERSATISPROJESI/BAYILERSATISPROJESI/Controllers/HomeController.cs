@@ -1,10 +1,10 @@
-﻿using BayiSatisProjesi.Models;
+﻿using BAYILERSATISPROJESI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace BayiSatisProjesi.Controllers
+namespace BAYILERSATISPROJESI.Controllers
 {
     public class HomeController : Controller
     {
