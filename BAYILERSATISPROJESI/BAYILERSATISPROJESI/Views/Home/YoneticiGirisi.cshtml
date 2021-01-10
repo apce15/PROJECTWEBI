@@ -12,56 +12,67 @@
     </style>
 </head>
 <body>
-    <div id="login-div">
-        @using (Html.BeginForm("YoneticiSinirlar", "Home", FormMethod.Post))
-        {
-            <table>
-                <tr>
-                    <td style="text-decoration:underline">YÖNETİCİ GİRİŞ</td>
-                </tr>
-                <tr>
-                    <td>@Html.LabelFor(model => model.KullaniciAdi)</td>
-                    <td>@Html.EditorFor(model => model.KullaniciAdi)</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>@Html.ValidationMessageFor(model => model.KullaniciAdi)</td>
-                </tr>
+    <div id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('/banzhow/img/arkaplan.jpeg');"></div>
+                <div class="carousel-caption">
+                    <div id="login-div" align="center">
+                        @using (Html.BeginForm("YoneticiSinirlar", "Home", FormMethod.Post))
+                        {
+                            <table>
+                                <tr>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelFor(model => model.KullaniciAdi)</td>
+                                    <td>@Html.EditorFor(model => model.KullaniciAdi)</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>@Html.ValidationMessageFor(model => model.KullaniciAdi)</td>
+                                </tr>
 
-                <tr>
-                    <td>@Html.LabelFor(model => model.Sifre)</td>
-                    <td>@Html.EditorFor(model => model.Sifre)</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <label class="field-validation-eror">@Html.DisplayFor(model => model.entryErrorMessage)</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>
-                        <input type="submit" value="GİRİŞ" />
+                                <tr>
+                                    <td>@Html.LabelFor(model => model.Sifre)</td>
+                                    <td>@Html.EditorFor(model => model.Sifre)</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <label class="field-validation-eror">@Html.DisplayFor(model => model.entryErrorMessage)</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <input type="submit" value="GİRİŞ" />
 
-                    </td>
-                </tr>
+                                    </td>
+                                </tr>
 
-            </table>
-        }
-
-        <script src="~/Scripts/jquery-1.8.0.min.js"></script>
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+                            </table>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+           
+
+                        <script src="~/Scripts/jquery-1.8.0.min.js"></script>
+                        <script src="~/Scripts/jquery.validate.min.js"></script>
+                        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+                   
 
 
-
-    <!-- Switcher -->
-    <script type="text/javascript" src="js/switcher/switcher.js"></script>
-    <link href="js/switcher/switcher.css" rel="stylesheet">
+                    <!-- Switcher -->
+                    <script type="text/javascript" src="js/switcher/switcher.js"></script>
+                    <link href="js/switcher/switcher.css" rel="stylesheet">
 
 
 

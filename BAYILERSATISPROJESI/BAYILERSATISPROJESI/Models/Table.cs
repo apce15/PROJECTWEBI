@@ -18,19 +18,19 @@ namespace BAYILERSATISPROJESI.Models
     {
         public int Id { get; set; }
 
-        [DisplayName("ulke")]
+        [DisplayName("Ülke")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public string ulke { get; set; }
 
-        [DisplayName("sehir")]
+        [DisplayName("Þehir")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public string sehir { get; set; }
 
-        [DisplayName("bayi-id")]
+        [DisplayName("Bayi ID")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public Nullable<decimal> bayiid { get; set; }
         [DataType(DataType.Password)]
-        [DisplayName("þifre")]
+        [DisplayName("Þifre")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public Nullable<decimal> sifre { get; set; }
         public string entryErrorMessage { get; set; }
