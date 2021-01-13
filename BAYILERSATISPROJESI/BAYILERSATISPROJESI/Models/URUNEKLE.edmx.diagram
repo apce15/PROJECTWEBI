@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="76d0489bf1b74aef93febeae51eaf7b5" Name="Diagram1">
-        <EntityTypeShape EntityType="BayiDataBaseModel.Table" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="8a410209004c42c0a8aa9b176a9545b2" Name="Diagram1">
+        <EntityTypeShape EntityType="URUNLERModel.URUNEKLE" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

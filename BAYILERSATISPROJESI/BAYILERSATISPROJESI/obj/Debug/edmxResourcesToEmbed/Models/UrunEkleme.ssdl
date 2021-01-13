@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UrunEklemeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ekleme">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UrunId" Type="int" />
+    <Property Name="UrunAdi" Type="nchar" MaxLength="20" />
+    <Property Name="Aciklama" Type="nchar" MaxLength="1000" />
+    <Property Name="Fiyat" Type="money" />
+    <Property Name="Resim" Type="image" />
+    <Property Name="Satistami" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="UrunEklemeModelStoreContainer">
+    <EntitySet Name="Ekleme" EntityType="Self.Ekleme" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,106 @@
+﻿@using BAYILERSATISPROJESI.Models
+@model List<URUNEKLE>
+
+
+<body>
+
+
+
+    <div class="container container-int">
+
+
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <hr />
+                <div class="col-md-12">
+                    <div class="alert alert-primary" role="alert">
+
+                    </div>
+
+                </div>
+
+                <hr />
+
+
+
+            </div>
+
+            <div class="col-md-8 col-sm-8">
+                <div class="col-md-9">
+
+
+
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ÜRÜN ID</th>
+                                <th>ÜRÜN ADI</th>
+
+                                <th>FİYAT</th>
+                                <th>STOK</th>
+                            </tr>
+
+
+                        </thead>
+
+                        <tbody>
+
+
+
+                            @foreach (var urn in Model)
+                            {
+
+                                <tr>
+                                    <td>@urn.URUNID </td>
+                                    <td>@urn.URUNAD </td>
+
+                                    <td>@urn.FIYAT </td>
+                                    <td>@urn.STOK </td>
+                                    <td><a href="" class="btn btn-info">SEPETE EKLE</a></td>
+
+
+
+
+
+
+
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="text-center">
+            <ul class="pagination">
+            </ul>
+        </div><!-- /.text-center -->
+
+
+
+    </div>
+
+
+
+
+    </div><!-- /.container -->
+
+
+
+
+
+
+
+
+</body>
+
+
+
+

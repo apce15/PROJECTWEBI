@@ -14,18 +14,16 @@ namespace BAYILERSATISPROJESI.Models
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
+
     public partial class Table
     {
         public int Id { get; set; }
-
         [DisplayName("Ülke")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public string ulke { get; set; }
-
         [DisplayName("Þehir")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public string sehir { get; set; }
-
         [DisplayName("Bayi ID")]
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public Nullable<decimal> bayiid { get; set; }
@@ -34,5 +32,6 @@ namespace BAYILERSATISPROJESI.Models
         [Required(ErrorMessage = "Bu alaný doldurunuz!!!")]
         public Nullable<decimal> sifre { get; set; }
         public string entryErrorMessage { get; set; }
+
     }
 }

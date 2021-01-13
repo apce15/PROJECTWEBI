@@ -10,7 +10,7 @@
     <Property Name="bayiid" Type="Decimal" Precision="20" Scale="0" />
     <Property Name="sifre" Type="Decimal" Precision="20" Scale="0" />
   </EntityType>
-  <EntityContainer Name="BayiDataBaseEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="BayiDataBaseEntities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Tables" EntityType="Self.Table" />
   </EntityContainer>
 </Schema>

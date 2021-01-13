@@ -17,6 +17,8 @@ namespace BAYILERSATISPROJESI.Controllers
         {
             return View();
         }
+
+      
         public ActionResult Urunler()
         {
 
@@ -48,8 +50,11 @@ namespace BAYILERSATISPROJESI.Controllers
         {
             throw new NotImplementedException();
         }
-
        
+        
+
+      
+
         public ActionResult YoneticiGirisi()
         {
             return View();
@@ -91,7 +96,7 @@ namespace BAYILERSATISPROJESI.Controllers
         [HttpPost]
         public ActionResult BayiSinirlar(BAYILERSATISPROJESI.Models.Table table)
         {
-            using (BayiDataBaseEntities db = new BayiDataBaseEntities())
+            using (BayiDataBaseEntities1 db = new BayiDataBaseEntities1())
             {
                 var tableDetail = db.Tables.Where(x => x.ulke == table.ulke && x.sehir == table.sehir && x.bayiid == table.bayiid && x.sifre == table.sifre).FirstOrDefault();
                 if (tableDetail == null)

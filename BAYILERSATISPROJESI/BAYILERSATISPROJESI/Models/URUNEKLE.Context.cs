@@ -13,10 +13,10 @@ namespace BAYILERSATISPROJESI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BayiDataBaseEntities1 : DbContext
+    public partial class URUNLEREntities : DbContext
     {
-        public BayiDataBaseEntities1()
-            : base("name=BayiDataBaseEntities1")
+        public URUNLEREntities()
+            : base("name=URUNLEREntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace BAYILERSATISPROJESI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Table> Tables { get; set; }
+        public virtual DbSet<URUNEKLE> URUNEKLEs { get; set; }
     }
 }

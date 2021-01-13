@@ -33,7 +33,7 @@
           <Property Name="bayiid" Type="Decimal" Precision="20" Scale="0" />
           <Property Name="sifre" Type="Decimal" Precision="20" Scale="0" />
         </EntityType>
-        <EntityContainer Name="BayiDataBaseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BayiDataBaseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tables" EntityType="Self.Table" />
         </EntityContainer>
       </Schema>
@@ -41,7 +41,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BayiDataBaseModelStoreContainer" CdmEntityContainer="BayiDataBaseEntities">
+        <EntityContainerMapping StorageEntityContainer="BayiDataBaseModelStoreContainer" CdmEntityContainer="BayiDataBaseEntities1">
           <EntitySetMapping Name="Tables">
             <EntityTypeMapping TypeName="BayiDataBaseModel.Table">
               <MappingFragment StoreEntitySet="Table">

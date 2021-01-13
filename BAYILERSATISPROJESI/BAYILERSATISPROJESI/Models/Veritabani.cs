@@ -7,8 +7,8 @@ namespace BAYILERSATISPROJESI.Models
 {
     public static class Veritabani
     {
-        private static List<Urun> _liste;
-        static Veritabani()
+        public static List<Urun> _liste;
+      static Veritabani()
         {
             _liste = new List<Urun>()
             {
@@ -19,7 +19,7 @@ namespace BAYILERSATISPROJESI.Models
                 new Urun(){ UrunId=5,UrunAdi="Lift5", Aciklama="iyi bir ürün", Fiyat=8000, Satistami=true}
             };
         }
-
+        
         public static List<Urun> Liste
         {
             get { return _liste; }
