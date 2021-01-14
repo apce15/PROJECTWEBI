@@ -17,8 +17,17 @@ namespace BAYILERSATISPROJESI.Controllers
         {
             return View();
         }
+        public ActionResult BayiListe()
+        {
+             BayiDataBaseEntities1 db = new BayiDataBaseEntities1();
+            var degerler = db.Tables.ToList();
 
-      
+            return View(degerler);
+
+           
+        }
+
+
         public ActionResult Urunler()
         {
 

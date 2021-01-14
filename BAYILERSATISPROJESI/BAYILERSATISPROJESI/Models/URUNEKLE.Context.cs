@@ -26,5 +26,10 @@ namespace BAYILERSATISPROJESI.Models
         }
     
         public virtual DbSet<URUNEKLE> URUNEKLEs { get; set; }
+
+        internal bool Any(Func<object, bool> p)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

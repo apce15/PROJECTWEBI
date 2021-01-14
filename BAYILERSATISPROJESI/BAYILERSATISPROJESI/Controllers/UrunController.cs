@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BAYILERSATISPROJESI.Models;
 
+
 namespace BAYILERSATISPROJESI.Controllers
 {
     public class UrunController : Controller
@@ -34,12 +35,13 @@ namespace BAYILERSATISPROJESI.Controllers
         }
         [HttpGet]
         public ActionResult BayiUrunler()
-        {     var degerler = db.URUNEKLEs.ToList();
+        { var degerler = db.URUNEKLEs.ToList();
 
             return View(degerler);
-        
-           
+
+
         }
+       
 
 
     }

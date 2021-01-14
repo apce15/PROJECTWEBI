@@ -15,11 +15,13 @@ namespace BAYILERSATISPROJESI.Models
     public partial class URUNEKLE
     {
         public int Id { get; set; }
-        public Nullable<int> URUNID { get; set; }
+        public int URUNID { get; set; }
         public string URUNAD { get; set; }
         public Nullable<decimal> FIYAT { get; set; }
         public Nullable<int> STOK { get; set; }
         public byte[] RESIM { get; set; }
         public string ACIKLAMA { get; set; }
+
+       
     }
 }
