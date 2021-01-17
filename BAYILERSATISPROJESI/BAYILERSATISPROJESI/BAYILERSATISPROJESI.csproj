@@ -156,51 +156,25 @@
     <Content Include="banzhow\sidebar.html" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Models\DBModel.Context.tt">
+    <Content Include="Models\PROJE.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
-      <DependentUpon>DBModel.edmx</DependentUpon>
+      <DependentUpon>PROJE.edmx</DependentUpon>
+      <LastGenOutput>PROJE.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DBModel.tt">
+    <Content Include="Models\PROJE.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DBModel.edmx</DependentUpon>
-      <LastGenOutput>DBModel.cs</LastGenOutput>
+      <DependentUpon>PROJE.edmx</DependentUpon>
+      <LastGenOutput>PROJE.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
-    <EntityDeploy Include="Models\Model1.edmx">
+    <Content Include="Models\ProjeDB.edmx.sql" />
+    <EntityDeploy Include="Models\PROJE.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+      <LastGenOutput>PROJE.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\URUNEKLE.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>URUNEKLE.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\URUNEKLE.edmx.diagram">
-      <DependentUpon>URUNEKLE.edmx</DependentUpon>
+    <Content Include="Models\PROJE.edmx.diagram">
+      <DependentUpon>PROJE.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.8.0.intellisense.js" />
-    <Content Include="Models\URUNEKLE.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>URUNEKLE.edmx</DependentUpon>
-      <LastGenOutput>URUNEKLE.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\URUNEKLE.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>URUNEKLE.edmx</DependentUpon>
-      <LastGenOutput>URUNEKLE1.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\jquery-1.8.0.js" />
     <Content Include="Scripts\jquery-1.8.0.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -214,66 +188,37 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\SepetController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\DBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.edmx</DependentUpon>
+    <Compile Include="Models\BayilerSet.cs">
+      <DependentUpon>PROJE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Kategori.cs" />
-    <Compile Include="Models\Model1.Context.cs">
+    <Compile Include="Models\PROJE.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
+      <DependentUpon>PROJE.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.cs">
+    <Compile Include="Models\PROJE.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PROJE.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Model1.Designer.cs">
+    <Compile Include="Models\PROJE.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Table.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>PROJE.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Urun.cs" />
-    <Compile Include="Models\URUNEKLE.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>URUNEKLE.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\URUNEKLE.cs">
-      <DependentUpon>URUNEKLE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\URUNEKLE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>URUNEKLE.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\URUNEKLE1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>URUNEKLE.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\UrunKategoriModel.cs" />
-    <Compile Include="Models\User.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
+    <Compile Include="Models\urunSet.cs">
+      <DependentUpon>PROJE.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UsersSet.cs">
+      <DependentUpon>PROJE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Veritabani.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -317,13 +262,6 @@
     <Content Include="banzhow\css\fonts\pacifico\pacifico-webfont.woff" />
     <Content Include="banzhow\css\fonts\pacifico\pacifico-webfontd41d.eot" />
     <Content Include="banzhow\debug.log" />
-    <EntityDeploy Include="Models\DBModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DBModel.edmx.diagram">
-      <DependentUpon>DBModel.edmx</DependentUpon>
-    </Content>
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -337,6 +275,7 @@
     <Content Include="Views\Urun\UrunEkle.cshtml" />
     <Content Include="Views\Urun\BayiUrunler.cshtml" />
     <Content Include="Views\Home\BayiListe.cshtml" />
+    <Content Include="Views\Sepet\Sepet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

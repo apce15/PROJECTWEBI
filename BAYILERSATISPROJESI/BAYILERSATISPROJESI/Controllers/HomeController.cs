@@ -19,8 +19,8 @@ namespace BAYILERSATISPROJESI.Controllers
         }
         public ActionResult BayiListe()
         {
-             BayiDataBaseEntities1 db = new BayiDataBaseEntities1();
-            var degerler = db.Tables.ToList();
+             PROJEEntities db = new PROJEEntities();
+            var degerler = db.BayilerSets.ToList();
 
             return View(degerler);
 
@@ -69,23 +69,23 @@ namespace BAYILERSATISPROJESI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult YoneticiSinirlar(BAYILERSATISPROJESI.Models.User user)
+        public ActionResult YoneticiSinirlar(BAYILERSATISPROJESI.Models.UsersSet user)
         {
-            using (DBModels db = new DBModels())
+            using (PROJEEntities db = new PROJEEntities())
             {
                 try
                 {
-                    var userDetail = db.Users.Where(x => x.KullaniciAdi == user.KullaniciAdi && x.Sifre == user.Sifre).FirstOrDefault();
+                    var userDetail = db.UsersSets.Where(x => x.KullaniciAdi == user.KullaniciAdi && x.Sifre == user.Sifre).FirstOrDefault();
                     if (userDetail == null)
                     {
                         Console.WriteLine("First");
-                        user.entryErrorMessage = "Kullanıcı adı veya şifre yanlış";
-                        return View("YoneticiGirisi", user);
+                        string errorMessage = "Kullanıcı Bulunamadı.";
+                        return View("YoneticiGirisi", errorMessage);
                     }
                     else
                     {
                         Console.WriteLine("Second");
-                        Session["userID"] = user.UserID;
+                        Session["userID"] = user.Id;
                         Session["kullanıcıadı"] = user.KullaniciAdi;
                         return View("YoneticiSinirlar", user);
                     }
@@ -103,24 +103,32 @@ namespace BAYILERSATISPROJESI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult BayiSinirlar(BAYILERSATISPROJESI.Models.Table table)
+        public ActionResult BayiSinirlar(BAYILERSATISPROJESI.Models.BayilerSet bayi)
         {
-            using (BayiDataBaseEntities1 db = new BayiDataBaseEntities1())
+            using (PROJEEntities db = new PROJEEntities())
             {
-                var tableDetail = db.Tables.Where(x => x.ulke == table.ulke && x.sehir == table.sehir && x.bayiid == table.bayiid && x.sifre == table.sifre).FirstOrDefault();
-                if (tableDetail == null)
+                try
                 {
-                    table.entryErrorMessage = " Yanlış Bilgileri Girdiniz.Tekrar Deneyin";
-                    return View("BayiGirisi", table);
-                }
-                else
-                {
-                    Session["ulke"] = table.ulke;
-                    Session["sehir"] = table.sehir;
-                    Session["bayiid"] = table.bayiid;
-                    Session["sifre"] = table.sifre;
+                    var tableDetail = db.BayilerSets.Where(x => x.Ulke == bayi.Ulke && x.Sehir == bayi.Sehir && x.BayiId == bayi.BayiId && x.Sifre == bayi.Sifre).FirstOrDefault();
+                    if (tableDetail == null)
+                    {
+                        string errorMessage = "Bayi Bulunamadı.";
+                        return View("BayiGirisi", errorMessage);
+                    }
+                    else
+                    {
+                        Session["ulke"] = bayi.Ulke;
+                        Session["sehir"] = bayi.Sehir;
+                        Session["bayiid"] = bayi.BayiId;
+                        Session["sifre"] = bayi.Sifre;
 
-                    return View("BayiSinirlar", table);
+                        return View("BayiSinirlar", bayi);
+                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    return null;
                 }
             }
 

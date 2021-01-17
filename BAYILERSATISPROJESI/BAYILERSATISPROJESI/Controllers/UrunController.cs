@@ -10,12 +10,14 @@ namespace BAYILERSATISPROJESI.Controllers
 {
     public class UrunController : Controller
     {
+        public static List<urunSet> sepet = new List<urunSet>();
+
         // GET: Urun
 
-        URUNLEREntities db = new URUNLEREntities();
+        PROJEEntities db = new PROJEEntities();
         public ActionResult UrunListe()
         {
-            var degerler = db.URUNEKLEs.ToList();
+            var degerler = db.urunSets.ToList();
 
             return View(degerler);
         }
@@ -25,9 +27,9 @@ namespace BAYILERSATISPROJESI.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UrunEkle(URUNEKLE p1)
+        public ActionResult UrunEkle(urunSet p1)
         {
-            db.URUNEKLEs.Add(p1);
+            db.urunSets.Add(p1);
 
             db.SaveChanges();
             return View();
@@ -35,12 +37,24 @@ namespace BAYILERSATISPROJESI.Controllers
         }
         [HttpGet]
         public ActionResult BayiUrunler()
-        { var degerler = db.URUNEKLEs.ToList();
+        { var degerler = db.urunSets.ToList();
 
             return View(degerler);
 
 
         }
+
+        public ActionResult SepeteEkle(urunSet urun)
+        {
+            sepet.Add(urun);
+
+            Session["Sepet"] = sepet;
+
+            var degerler = db.urunSets.ToList();
+
+            return View("BayiUrunler", degerler);
+        }
+
        
 
 

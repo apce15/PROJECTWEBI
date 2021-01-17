@@ -1,4 +1,4 @@
-﻿@model BAYILERSATISPROJESI.Models.Table
+﻿@model BAYILERSATISPROJESI.Models.BayilerSet
 
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -27,42 +27,37 @@
                                    
                                 </tr>
                                 <tr>
-                                    <td>@Html.LabelFor(model => model.ulke)</td>
-                                    <td>@Html.EditorFor(model => model.ulke)</td>
+                                    <td>@Html.LabelFor(model => model.Ulke)</td>
+                                    <td>@Html.EditorFor(model => model.Ulke)</td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.ulke)</td>
+                                    <td>@Html.ValidationMessageFor(model => model.Ulke)</td>
                                 </tr>
                                 <tr>
-                                    <td>@Html.LabelFor(model => model.sehir)</td>
-                                    <td>@Html.EditorFor(model => model.sehir)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.sehir)</td>
-                                </tr>
-                                <tr>
-                                    <td>@Html.LabelFor(model => model.bayiid)</td>
-                                    <td>@Html.EditorFor(model => model.bayiid)</td>
+                                    <td>@Html.LabelFor(model => model.Sehir)</td>
+                                    <td>@Html.EditorFor(model => model.Sehir)</td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.bayiid)</td>
+                                    <td>@Html.ValidationMessageFor(model => model.Sehir)</td>
+                                </tr>
+                                <tr>
+                                    <td>@Html.LabelFor(model => model.BayiId)</td>
+                                    <td>@Html.EditorFor(model => model.BayiId)</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>@Html.ValidationMessageFor(model => model.BayiId)</td>
                                 </tr>
 
                                 <tr>
-                                    <td>@Html.LabelFor(model => model.sifre)</td>
-                                    <td>@Html.EditorFor(model => model.sifre)</td>
+                                    <td>@Html.LabelFor(model => model.Sifre)</td>
+                                    <td>@Html.EditorFor(model => model.Sifre)</td>
                                 </tr>
                                 <tr>
                                     <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.sifre)</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <label class="field-validation-eror">@Html.DisplayFor(model => model.entryErrorMessage)</label>
-                                    </td>
+                                    <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
                                 </tr>
                                 <tr>
                                     <td></td>

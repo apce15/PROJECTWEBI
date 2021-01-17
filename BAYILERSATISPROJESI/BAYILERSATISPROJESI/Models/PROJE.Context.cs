@@ -13,11 +13,13 @@ namespace BAYILERSATISPROJESI.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class URUNLEREntities : DbContext
+    public partial class PROJEEntities : DbContext
     {
-        public URUNLEREntities()
-            : base("name=URUNLEREntities")
+        public PROJEEntities()
+            : base("name=PROJEEntities")
         {
+
+
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -25,11 +27,8 @@ namespace BAYILERSATISPROJESI.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<URUNEKLE> URUNEKLEs { get; set; }
-
-        internal bool Any(Func<object, bool> p)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual DbSet<BayilerSet> BayilerSets { get; set; }
+        public virtual DbSet<urunSet> urunSets { get; set; }
+        public virtual DbSet<UsersSet> UsersSets { get; set; }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@using BAYILERSATISPROJESI.Models
-@model List<URUNEKLE>
+@model List<urunSet>
 
 
 <body>
@@ -53,21 +53,23 @@
                             @foreach (var urn in Model)
                             {
 
-                                <tr>
-                                    <td>@urn.URUNID </td>
-                                    <td>@urn.URUNAD </td>
+                            <tr>
+                                <td>@urn.Id </td>
+                                <td>@urn.Isim </td>
 
-                                    <td>@urn.FIYAT </td>
-                                    <td>@urn.STOK </td>
-                                    <td><a href="" class="btn btn-info">SEPETE EKLE</a></td>
+                                <td>@urn.Fiyat </td>
+                                <td>@urn.StokAdeti </td>
+                                <td>
+                                    @using (Html.BeginForm("SepeteEkle", "Urun", urn, FormMethod.Post))
+                                    {
+                                        <button type="submit"> Sepete Ekle</button>
 
+                                    }
+                                </td>
+                                
+                
 
-
-
-
-
-
-                                </tr>
+                            </tr>
                             }
                         </tbody>
                     </table>

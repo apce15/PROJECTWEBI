@@ -1,0 +1,44 @@
+﻿
+
+@using BAYILERSATISPROJESI.Models;
+
+
+<body>
+
+    <h3>Cart Page</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Option</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        @foreach (URUNEKLE item in (List<URUNEKLE>)Session["cart"])
+        {
+            <tr>
+
+                <td><a href="@Url.Action("Remove", "Cart", new { id = item.Id })">Remove</a></td>
+                <td>@item.URUNID</td>
+                <td>@item.URUNAD</td>
+                <td>@item.FIYAT</td>
+                <td>@item.MIKTAR</td>
+                <td>@(item.FIYAT * item.MIKTAR)</td>
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="6">Sum</td>
+            <td>
+                @{
+                    List<URUNEKLE> cart = (List<URUNEKLE>)Session["cart"];
+                    var total = cart.Sum(item => item.FIYAT * item.MIKTAR);
+                }
+                @total
+            </td>
+        </tr>
+    </table>
+    <br>
+
+</body>

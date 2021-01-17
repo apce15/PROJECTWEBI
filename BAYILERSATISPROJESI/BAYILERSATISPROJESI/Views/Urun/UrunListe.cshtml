@@ -1,5 +1,5 @@
 ﻿@using BAYILERSATISPROJESI.Models
-@model List<URUNEKLE>
+@model List<urunSet>
 
 
 <body>
@@ -49,25 +49,25 @@
                         <tbody>
 
 
-
-                            @foreach (var urn in Model)
+                            @if (Model != null)
                             {
+                                foreach (var urn in Model)
+                                {
 
-                                <tr>
-                                    <td>@urn.URUNID </td>
-                                    <td>@urn.URUNAD </td>
+                                    <tr>
+                                        <td>@urn.Id </td>
+                                        <td>@urn.Isim </td>
 
-                                    <td>@urn.FIYAT </td>
-                                    <td>@urn.STOK </td>
-
-
-
-
-
-
-
-                                </tr>
+                                        <td>@urn.Fiyat </td>
+                                        <td>@urn.StokAdeti </td>
+                                    </tr>
+                                }
                             }
+                            else
+                            {
+                                <p>Ürün Bulunamadı.</p>
+                            }
+
                         </tbody>
                     </table>
                    
