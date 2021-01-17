@@ -33,5 +33,16 @@
     <EntitySet Name="BayilerSets" EntityType="Self.BayilerSet" />
     <EntitySet Name="urunSets" EntityType="Self.urunSet" />
     <EntitySet Name="UsersSets" EntityType="Self.UsersSet" />
+    <EntitySet Name="Siparislers" EntityType="PROJEModel.Siparisler" />
   </EntityContainer>
+  <EntityType Name="Siparisler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BayiId" Type="Int32" Nullable="false" />
+    <Property Name="UrunId" Type="Int32" Nullable="false" />
+    <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Tutar" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+  </EntityType>
 </Schema>

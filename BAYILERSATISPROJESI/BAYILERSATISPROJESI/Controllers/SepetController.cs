@@ -12,7 +12,9 @@ namespace BAYILERSATISPROJESI.Controllers
         // GET: Sepet
         public ActionResult Sepet()
         {
-            return View();
+            var sepet = (List<urunSet>)Session["Sepet"];
+
+            return View(sepet);
         }
         
         [HttpPost]
@@ -65,5 +67,7 @@ namespace BAYILERSATISPROJESI.Controllers
             return RedirectToAction("Myorder", "AddToCart");
             //return View();
         }
+
+        
     }
 }

@@ -2,8 +2,8 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PROJEModelStoreContainer" CdmEntityContainer="PROJEEntities">
     <EntitySetMapping Name="BayilerSets">
-      <EntityTypeMapping TypeName="PROJEModel.BayilerSet">
-        <MappingFragment StoreEntitySet="BayilerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(PROJEModel.BayilerSet)">
+        <MappingFragment StoreEntitySet="BayilerSets">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Ulke" ColumnName="Ulke" />
           <ScalarProperty Name="Sehir" ColumnName="Sehir" />
@@ -13,8 +13,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="urunSets">
-      <EntityTypeMapping TypeName="PROJEModel.urunSet">
-        <MappingFragment StoreEntitySet="urunSet">
+      <EntityTypeMapping TypeName="IsTypeOf(PROJEModel.urunSet)">
+        <MappingFragment StoreEntitySet="urunSets">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Isim" ColumnName="Isim" />
           <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
@@ -25,11 +25,22 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UsersSets">
-      <EntityTypeMapping TypeName="PROJEModel.UsersSet">
-        <MappingFragment StoreEntitySet="UsersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(PROJEModel.UsersSet)">
+        <MappingFragment StoreEntitySet="UsersSets">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
           <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siparislers">
+      <EntityTypeMapping TypeName="IsTypeOf(PROJEModel.Siparisler)">
+        <MappingFragment StoreEntitySet="Siparislers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BayiId" ColumnName="BayiId" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Tutar" ColumnName="Tutar" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

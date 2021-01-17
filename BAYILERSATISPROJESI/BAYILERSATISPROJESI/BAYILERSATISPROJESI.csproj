@@ -161,6 +161,7 @@
       <DependentUpon>PROJE.edmx</DependentUpon>
       <LastGenOutput>PROJE.Context.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\PROJE.edmx.sql" />
     <Content Include="Models\PROJE.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PROJE.edmx</DependentUpon>
@@ -211,6 +212,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PROJE.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Siparisler.cs">
+      <DependentUpon>PROJE.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Urun.cs" />
     <Compile Include="Models\UrunKategoriModel.cs" />

@@ -18,7 +18,9 @@ namespace BAYILERSATISPROJESI.Controllers
         public ActionResult UrunListe()
         {
             var degerler = db.urunSets.ToList();
-
+            //int bayiId = (int)Session["bayiId"];
+            //var degerler = db.urunSets.Where(x => x.bayıId == bayiId).ToList();
+            
             return View(degerler);
         }
         [HttpGet]
@@ -46,7 +48,18 @@ namespace BAYILERSATISPROJESI.Controllers
 
         public ActionResult SepeteEkle(urunSet urun)
         {
-            sepet.Add(urun);
+            var targetUrun = sepet.Where(x => x.Id == urun.Id).FirstOrDefault();
+
+            if (targetUrun != null)
+            {
+                sepet.Where(x => x.Id == urun.Id).FirstOrDefault().Miktar++;
+            }
+            else
+            {
+                urun.Miktar++;
+                sepet.Add(urun);
+            }
+            
 
             Session["Sepet"] = sepet;
 

@@ -134,5 +134,36 @@ namespace BAYILERSATISPROJESI.Controllers
 
         }
 
+        public ActionResult SatinAl()
+        {
+
+            var sepet = (List<urunSet>)Session["Sepet"];
+
+            PROJEEntities db = new PROJEEntities();
+            foreach (var item in sepet)
+            {
+                Siparisler siparis = new Siparisler();
+
+                siparis.BayiId = (int)Session["bayiid"];
+                siparis.Tarih = DateTime.Now;
+                siparis.Tutar = item.Fiyat * item.Miktar;
+                siparis.UrunId = item.Id;
+
+                db.Siparislers.Add(siparis);
+            }
+
+            //stok azaltma
+            foreach (var item in sepet)
+            {
+                var target = db.urunSets.Where(x => x.Id == item.Id).FirstOrDefault();
+
+                target.StokAdeti -= item.Miktar;
+            }
+
+            int count = db.SaveChanges();
+
+            return View();
+        }
+
     }
 }

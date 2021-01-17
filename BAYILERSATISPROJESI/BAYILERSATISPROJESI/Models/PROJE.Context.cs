@@ -18,8 +18,6 @@ namespace BAYILERSATISPROJESI.Models
         public PROJEEntities()
             : base("name=PROJEEntities")
         {
-
-
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -30,5 +28,6 @@ namespace BAYILERSATISPROJESI.Models
         public virtual DbSet<BayilerSet> BayilerSets { get; set; }
         public virtual DbSet<urunSet> urunSets { get; set; }
         public virtual DbSet<UsersSet> UsersSets { get; set; }
+        public virtual DbSet<Siparisler> Siparislers { get; set; }
     }
 }
