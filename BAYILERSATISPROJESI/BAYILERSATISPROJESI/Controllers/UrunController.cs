@@ -52,7 +52,7 @@ namespace BAYILERSATISPROJESI.Controllers
 
             if (targetUrun != null)
             {
-                int 
+               
                 sepet.Where(x => x.Id == urun.Id).FirstOrDefault().Miktar++;
             }
             else

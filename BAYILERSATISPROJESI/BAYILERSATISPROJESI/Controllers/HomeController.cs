@@ -98,6 +98,15 @@ namespace BAYILERSATISPROJESI.Controllers
             }
 
         }
+        public ActionResult Bayiler()
+        {
+            PROJEEntities db = new PROJEEntities();
+            var degerler = db.BayilerSets.ToList();
+            
+
+            return View(degerler);
+
+        }
         public ActionResult BayiGirisi()
         {
             return View();
@@ -180,6 +189,12 @@ namespace BAYILERSATISPROJESI.Controllers
             var degerler = db.Siparislers.ToList();
 
             return View(degerler);
+        }
+        public ActionResult KarHesap(int sayi1=0, int sayi2=0)
+        {
+            int sonuc = sayi2 - sayi1;
+            ViewBag.snc = sonuc;
+            return View();
         }
 
     }

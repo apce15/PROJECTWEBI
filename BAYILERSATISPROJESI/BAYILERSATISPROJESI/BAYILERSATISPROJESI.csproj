@@ -283,6 +283,8 @@
     <Content Include="Views\Home\SatinAl.cshtml" />
     <Content Include="Views\Home\Siparislerim.cshtml" />
     <Content Include="Views\Home\AlinanSiparis.cshtml" />
+    <Content Include="Views\Home\KarHesap.cshtml" />
+    <Content Include="Views\Home\Bayiler.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
