@@ -53,27 +53,33 @@
                             @foreach (var urn in Model)
                             {
 
-                            <tr>
-                                <td>@urn.Id </td>
-                                <td>@urn.Isim </td>
+                                <tr>
+                                    <td>@urn.Id </td>
+                                    <td>@urn.Isim </td>
 
-                                <td>@urn.Fiyat </td>
-                                <td>@urn.StokAdeti </td>
-                                <td>
-                                    @using (Html.BeginForm("SepeteEkle", "Urun", urn, FormMethod.Post))
-                                    {
-                                        <button type="submit"> Sepete Ekle</button>
+                                    <td>@urn.Fiyat </td>
+                                    <td>@urn.StokAdeti </td>
+                                    <td>
+                                        @using (Html.BeginForm("SepeteEkle", "Urun", urn, FormMethod.Post))
+                                        {
+                                            <button type="submit"> Sepete Ekle</button>
 
-                                    }
-                                </td>
-                                
-                
+                                        }
+                                    </td>
 
-                            </tr>
+
+
+                                </tr>
+                            }
+                            @using (Html.BeginForm("Sepet", "Sepet", FormMethod.Post))
+                            {
+                                <button type="submit"> Geri Dön</button>
+
                             }
                         </tbody>
+                        
                     </table>
-
+                         
                 </div>
             </div>
         </div>

@@ -161,8 +161,25 @@ namespace BAYILERSATISPROJESI.Controllers
             }
 
             int count = db.SaveChanges();
+            
+            var degerler = db.Siparislers.ToList();
 
-            return View();
+            return View(degerler);
+           
+        }
+        public ActionResult Siparislerim()
+        {
+            PROJEEntities db = new PROJEEntities();
+            var degerler = db.Siparislers.ToList();
+
+            return View(degerler);
+        }
+        public ActionResult AlinanSiparis()
+        {
+            PROJEEntities db = new PROJEEntities();
+            var degerler = db.Siparislers.ToList();
+
+            return View(degerler);
         }
 
     }

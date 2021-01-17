@@ -19,6 +19,8 @@ namespace BAYILERSATISPROJESI.Models
         public int UrunId { get; set; }
         public System.DateTime Tarih { get; set; }
         public decimal Tutar { get; set; }
+        [NotMapped]
+        public int Miktar { get; set; }
 
     }
 }

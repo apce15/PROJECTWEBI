@@ -52,12 +52,14 @@ namespace BAYILERSATISPROJESI.Controllers
 
             if (targetUrun != null)
             {
+                int 
                 sepet.Where(x => x.Id == urun.Id).FirstOrDefault().Miktar++;
             }
             else
             {
                 urun.Miktar++;
                 sepet.Add(urun);
+                
             }
             
 
@@ -67,8 +69,16 @@ namespace BAYILERSATISPROJESI.Controllers
 
             return View("BayiUrunler", degerler);
         }
+        
+        //public ActionResult Siparislerim()
+        //{
+        //    PROJEEntities db = new PROJEEntities();
 
-       
+        //    var degerler = db.Siparislers.ToList();
+
+        //    return View(degerler);
+            
+        //}
 
 
     }

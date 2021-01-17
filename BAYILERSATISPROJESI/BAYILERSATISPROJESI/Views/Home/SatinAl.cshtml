@@ -1,0 +1,109 @@
+﻿@using BAYILERSATISPROJESI.Models
+@model List<Siparisler>
+
+
+<body>
+
+
+
+    <div class="container container-int">
+
+
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <hr />
+                <div class="col-md-12">
+                    <div class="alert alert-primary" role="alert">
+
+                    </div>
+
+                </div>
+
+                <hr />
+
+
+
+            </div>
+
+            <div class="col-md-8 col-sm-8">
+                <div class="col-md-9">
+
+
+
+
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>BAYİ ID</th>
+
+                                <th>URUN ID</th>
+                                <th>TARİH</th>
+                                <th></th>
+
+                            </tr>
+
+
+                        </thead>
+
+                        <tbody>
+
+
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td>@item.Id </td>
+                                        <td>@item.BayiId</td>
+
+                                        <td>@item.UrunId</td>
+                                        <td>@item.Tarih</td>
+                                        <td>@item.Tutar</td>
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <p>Ürün Bulunamadı.</p>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="text-center">
+            <ul class="pagination">
+            </ul>
+        </div><!-- /.text-center -->
+
+
+
+    </div>
+
+
+
+
+    </div><!-- /.container -->
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
