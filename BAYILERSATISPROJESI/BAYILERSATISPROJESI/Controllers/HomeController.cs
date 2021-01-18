@@ -78,15 +78,14 @@ namespace BAYILERSATISPROJESI.Controllers
                     var userDetail = db.UsersSets.Where(x => x.KullaniciAdi == user.KullaniciAdi && x.Sifre == user.Sifre).FirstOrDefault();
                     if (userDetail == null)
                     {
-                        Console.WriteLine("First");
-                        string errorMessage = "Kullanıcı Bulunamadı.";
-                        return View("YoneticiGirisi", errorMessage);
+                        user.LoginErrorMessage = "Kullanıcı adı veya şifre yanlış";
+                        return View("YoneticiGirisi", user);
                     }
                     else
                     {
                         Console.WriteLine("Second");
                         Session["userID"] = user.Id;
-                        Session["kullanıcıadı"] = user.KullaniciAdi;
+                        Session["Kullanıcı Adı"] = user.KullaniciAdi;
                         return View("YoneticiSinirlar", user);
                     }
                 }
@@ -121,15 +120,16 @@ namespace BAYILERSATISPROJESI.Controllers
                     var tableDetail = db.BayilerSets.Where(x => x.Ulke == bayi.Ulke && x.Sehir == bayi.Sehir && x.BayiId == bayi.BayiId && x.Sifre == bayi.Sifre).FirstOrDefault();
                     if (tableDetail == null)
                     {
-                        string errorMessage = "Bayi Bulunamadı.";
-                        return View("BayiGirisi", errorMessage);
+
+                        bayi.LoginErrorMessage = "Girilen Bilgiler Hatalı.";
+                        return View("BayiGirisi", bayi);
                     }
                     else
                     {
-                        Session["ulke"] = bayi.Ulke;
-                        Session["sehir"] = bayi.Sehir;
-                        Session["bayiid"] = bayi.BayiId;
-                        Session["sifre"] = bayi.Sifre;
+                        Session["Ulke"] = bayi.Ulke;
+                        Session["Sehir"] = bayi.Sehir;
+                        Session["BayiId"] = bayi.BayiId;
+                        Session["Sifre"] = bayi.Sifre;
 
                         return View("BayiSinirlar", bayi);
                     }
@@ -195,6 +195,15 @@ namespace BAYILERSATISPROJESI.Controllers
             int sonuc = sayi2 - sayi1;
             ViewBag.snc = sonuc;
             return View();
+        }
+        public ActionResult StokBilgi()
+        {
+
+            PROJEEntities db = new PROJEEntities();
+            var degerler = db.urunSets.ToList();
+
+            return View(degerler);
+            
         }
 
     }

@@ -12,9 +12,10 @@
     </style>
 </head>
 <body>
+    
     <div id="myCarousel" class="carousel slide">
-      
-     
+
+
         <div class="carousel-inner">
             <div class="item active">
                 <div class="fill" style="background-image:url('/banzhow/img/arkaplan.jpeg');"></div>
@@ -22,68 +23,72 @@
                     <div id="login-div" align="center">
                         @using (Html.BeginForm("BayiSinirlar", "Home", FormMethod.Post))
                         {
-                            <table>
-                                <tr>
-                                   
-                                </tr>
-                                <tr>
-                                    <td>@Html.LabelFor(model => model.Ulke)</td>
-                                    <td>@Html.EditorFor(model => model.Ulke)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.Ulke)</td>
-                                </tr>
-                                <tr>
-                                    <td>@Html.LabelFor(model => model.Sehir)</td>
-                                    <td>@Html.EditorFor(model => model.Sehir)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.Sehir)</td>
-                                </tr>
-                                <tr>
-                                    <td>@Html.LabelFor(model => model.BayiId)</td>
-                                    <td>@Html.EditorFor(model => model.BayiId)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.BayiId)</td>
-                                </tr>
+                        <table>
+                            <tr>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(model => model.Ulke)</td>
+                                <td>@Html.EditorFor(model => model.Ulke)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>@Html.ValidationMessageFor(model => model.Ulke)</td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(model => model.Sehir)</td>
+                                <td>@Html.EditorFor(model => model.Sehir)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>@Html.ValidationMessageFor(model => model.Sehir)</td>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(model => model.BayiId)</td>
+                                <td>@Html.EditorFor(model => model.BayiId)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>@Html.ValidationMessageFor(model => model.BayiId)</td>
+                            </tr>
 
-                                <tr>
-                                    <td>@Html.LabelFor(model => model.Sifre)</td>
-                                    <td>@Html.EditorFor(model => model.Sifre)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        <input type="submit" value="GİRİŞ" />
+                            <tr>
+                                <td>@Html.LabelFor(model => model.Sifre)</td>
+                                <td>@Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @type = "Password" } })</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label class="field-validation-eror">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="GİRİŞ" />
 
-                                    </td>
-                                </tr>
+                                </td>
+                            </tr>
 
-                            </table>
+                        </table>
                         }
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-                        <script src="~/Scripts/jquery-1.8.0.min.js"></script>
-                        <script src="~/Scripts/jquery.validate.min.js"></script>
-                        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-                    </div>
+        <script src="~/Scripts/jquery-1.8.0.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    </div>
 
 
 
-                    <!-- Switcher -->
-                    <script type="text/javascript" src="js/switcher/switcher.js"></script>
-                    <link href="js/switcher/switcher.css" rel="stylesheet">
+    <!-- Switcher -->
+    <script type="text/javascript" src="js/switcher/switcher.js"></script>
+    <link href="js/switcher/switcher.css" rel="stylesheet">
 
 
 

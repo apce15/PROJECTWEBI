@@ -1,0 +1,104 @@
+﻿@using BAYILERSATISPROJESI.Models
+@model List<urunSet>
+
+
+<body>
+
+
+
+    <div class="container container-int">
+
+
+
+        <div class="row">
+            <div class="col-lg-12">
+
+                <hr />
+                <div class="col-md-12">
+                    <div class="alert alert-primary" role="alert">
+
+                    </div>
+
+                </div>
+
+                <hr />
+
+
+
+            </div>
+
+            <div class="col-md-8 col-sm-8">
+                <div class="col-md-9">
+                    <table class="table table-striped">
+
+
+                        <tbody>
+
+
+                            @if (Model != null)
+                            {
+                            <thead>
+                                <tr>
+
+                                    <th>URUN AD</th>
+                                    <th>ÜRÜN STOK BİLGİSİ</th>
+
+                                    
+                                    <th></th>
+                                </tr>
+
+
+                            </thead>
+                            foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    <td>@item.Isim</td>
+
+                                    <td>@item.StokAdeti</td>
+
+                                   >
+
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <p>STOK BULUNMAMAKTA</p>
+                        }
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="text-center">
+                <ul class="pagination">
+                </ul>
+            </div><!-- /.text-center -->
+
+
+
+        </div>
+
+
+
+
+        </div><!-- /.container -->
+
+
+
+
+
+
+
+
+    </body>
+
+
+
+

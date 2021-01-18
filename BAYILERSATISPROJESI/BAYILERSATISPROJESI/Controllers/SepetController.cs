@@ -57,17 +57,26 @@ namespace BAYILERSATISPROJESI.Controllers
             return View((List<urunSet>)Session["cart"]);
 
         }
+        
 
         public ActionResult Remove(urunSet mob)
         {
-            List<urunSet> liste = (List<urunSet>)Session["cart"];
+            List<urunSet> liste = (List<urunSet>)Session["Sepet"];
             liste.RemoveAll(x => x.Id == mob.Id);
-            Session["cart"] = liste;
+            Session["Sepet"] = liste;
             Session["count"] = Convert.ToInt32(Session["count"]) - 1;
-            return RedirectToAction("Myorder", "AddToCart");
+            return RedirectToAction("Sepet", "Sepet");
             //return View();
         }
+        public ActionResult Sil(int Id)
+        {
+            PROJEEntities db = new PROJEEntities();
+            urunSet model = db.urunSets.Find(Id);
+            db.urunSets.Remove(model);
+            db.SaveChanges();
+            return RedirectToAction("Sepet");
 
+        }
         
     }
 }

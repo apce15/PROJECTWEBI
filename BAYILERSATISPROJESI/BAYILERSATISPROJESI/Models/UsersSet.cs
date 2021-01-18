@@ -11,11 +11,21 @@ namespace BAYILERSATISPROJESI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class UsersSet
     {
         public int Id { get; set; }
+        [DisplayName("Kullanýcý Adý")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!")]
         public string KullaniciAdi { get; set; }
+
+        [DisplayName("Þifre")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!")]
+        [DataType(DataType.Password)]
         public string Sifre { get; set; }
+       
+        public string LoginErrorMessage { get; set; }
     }
 }

@@ -22,35 +22,43 @@
                     <div id="login-div" align="center">
                         @using (Html.BeginForm("YoneticiSinirlar", "Home", FormMethod.Post))
                         {
-                            <table>
-                                <tr>
-                                </tr>
-                                <tr>
-                                    <td>@Html.LabelFor(model => model.KullaniciAdi)</td>
-                                    <td>@Html.EditorFor(model => model.KullaniciAdi)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.KullaniciAdi)</td>
-                                </tr>
 
-                                <tr>
-                                    <td>@Html.LabelFor(model => model.Sifre)</td>
-                                    <td>@Html.EditorFor(model => model.Sifre)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        <input type="submit" value="GİRİŞ" />
+                        <table>
 
-                                    </td>
-                                </tr>
+                            <tr>
+                            </tr>
+                            <tr>
+                                <td>@Html.LabelFor(model => model.KullaniciAdi)</td>
+                                <td>@Html.EditorFor(model => model.KullaniciAdi)</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>@Html.ValidationMessageFor(model => model.KullaniciAdi)</td>
 
-                            </table>
+                            </tr>
+
+                            <tr>
+                                <td>@Html.LabelFor(model => model.Sifre)</td>
+                                <td>@Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @type = "Password" } })</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>@Html.ValidationMessageFor(model => model.Sifre)</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label class="field-validation-eror">@Html.DisplayFor(model => model.LoginErrorMessage)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="GİRİŞ" />
+
+                                </td>
+                            </tr>
+
+                        </table>
                         }
                     </div>
                 </div>

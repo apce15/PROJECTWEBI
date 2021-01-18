@@ -9,6 +9,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace BAYILERSATISPROJESI.Models
 {
+    using Microsoft.AspNetCore.Http;
     using System;
     using System.Collections.Generic;
     
@@ -23,5 +24,6 @@ namespace BAYILERSATISPROJESI.Models
         public string Aciklama { get; set; }
         [NotMapped]
         public int Miktar { get; set; }
+
     }
 }

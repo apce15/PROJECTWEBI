@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BAYILERSATISPROJESI.Models;
-
+using Microsoft.AspNetCore.Http;
 
 namespace BAYILERSATISPROJESI.Controllers
 {
@@ -69,7 +69,8 @@ namespace BAYILERSATISPROJESI.Controllers
 
             return View("BayiUrunler", degerler);
         }
-        
+       
+
         //public ActionResult Siparislerim()
         //{
         //    PROJEEntities db = new PROJEEntities();
@@ -77,7 +78,7 @@ namespace BAYILERSATISPROJESI.Controllers
         //    var degerler = db.Siparislers.ToList();
 
         //    return View(degerler);
-            
+
         //}
 
 

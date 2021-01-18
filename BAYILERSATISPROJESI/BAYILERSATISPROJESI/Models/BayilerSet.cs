@@ -11,13 +11,25 @@ namespace BAYILERSATISPROJESI.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class BayilerSet
     {
         public int Id { get; set; }
+        [DisplayName("Ülke")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!")]
         public string Ulke { get; set; }
+        [DisplayName("Þehir")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!")]
         public string Sehir { get; set; }
+        [DisplayName("Bayi ID")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!")]
         public int BayiId { get; set; }
+        [DisplayName("Þifre")]
+        [Required(ErrorMessage = "Bu alaný doldurunuz!!")]
         public string Sifre { get; set; }
+        
+        public string LoginErrorMessage { get; internal set; }
     }
 }
